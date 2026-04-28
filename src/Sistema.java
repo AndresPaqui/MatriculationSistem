@@ -1,6 +1,7 @@
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
+import java.util.List;
 import java.util.Scanner;
 
 public class Sistema {
@@ -125,6 +126,37 @@ public class Sistema {
         int tipoCombustible = sc.nextInt();
         vehiculo.setTipoCombustible(tipoCombustible);
     }
+
+    //Imprimir nombre de vehiculos
+
+    public int seleccionarVehiculo(Vehiculo[] vehiculos, int cont) {
+        int opc;
+        System.out.println("Vehiculos");
+
+        for(int i = 0; i < cont; i++) {
+            System.out.println(i + ". " + vehiculos[i].getPlaca());
+        }
+
+        System.out.print("Seleccione un vehiculo \n >> ");
+
+        opc = sc.nextInt();
+        return opc;
+    }
+
+    public int seleccionarVehiculo(List<Vehiculo> listaVehiculo) {
+        int opc;
+        System.out.println("Vehiculos");
+        int i = 0;
+        for(Vehiculo vehiculo : listaVehiculo) {
+            System.out.println(i + ". " + vehiculo.getPlaca());
+
+            i++;
+        }
+        opc = sc.nextInt();
+        return opc;
+    }
+
+
 
 
 }
